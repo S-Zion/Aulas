@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p id="p.res">Aqui vai o resultado</p>
+    <p>Aprendendo a usar o<strong> DOM </strong>em JavaScript.</p>
+    <div>Clique em mim.</div>
+    <div>Mais uma div aqui.</div>
+    <p class="txt">Texto aleatorious big.</p>
+    <script>
+        document.getElementById('p.res').innerHTML = "Quero café! ÉÉÉÉÉÉÉÉ!!"; //Aqui o parágrafo da Id "p.res" foi modificado no JavaScript.
+        //getElementById é um -Método-
+        //innerHTML é uma -Propriedade-. Ela puxa o conteúdo dentro da tag selecionada junto com a formatação.
+        //innerText Essa -Propriedade- puxa o texto dentro da tag selecionada sem a formatação.
+        document.getElementsByTagName('div')[1].innerHTML = "Essa mina, ela é louca!"
+        window.document.write(`Um pouco de texto aqui. <br>`)
+        document.getElementsByClassName('txt')[0].style.background=('blue')
+        document.write(Date())
+    </script>
+</body>
+</html>

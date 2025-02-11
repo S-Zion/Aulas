@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.AllClass{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Pistol{
+    flex:2.50;
+    width: 300px;
+    height: 300px;
+    overflow:scroll;
+    background-image: radial-gradient(linear, black, red, white);    
+}
+
+.Halberd{
+    flex:2.50;
+    width: 300px;
+    height:300px;
+    background-color:rgb(69, 128, 67);
+}
+
+.ColtM4{
+    flex:5;
+    width:300px;
+    height: 300px;
+    background-color: yellow;
+}

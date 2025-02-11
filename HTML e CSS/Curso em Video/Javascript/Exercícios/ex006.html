@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula Condições</title>
+</head>
+<body>
+    <h1>Medidor de Velocidade no Trânsito</h1>
+    <input type="number" name="vel" id="vel">
+    <label><strong>KM/h foi a velocidade desse veículo.</strong></label>
+    <input type="button" name="calcular" id="calcular" value="Calcular.">
+    <p id="res"></p>
+</body>
+<script>
+    const vel = document.querySelector('#vel') //Velocidade do veículo.
+    const calc = document.querySelector('#calcular') //Botão 'Calcular.'
+    const res = document.querySelector('#res')
+    calc.addEventListener('click', readvel)
+    function readvel(){
+        if (Number(vel.value)>60) res.innerHTML='Veículo ultrapassou os limites de velocidade. <strong>MULTADO!</strong>' //Correções:Selecionou o valor do input em vez de selecionar o input;
+        else{ res.innerHTML='Veículo dentro dos limites de velocidade. Dirija com segurança.'}           // converteu o valor do input para número;
+    }
+</script>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas Guarani</title>
+    <style>
+        *{margin:0;
+        padding:0;
+        box-sizing:border-box;}
+        
+        :root{
+            --cor1:#ffe5b1;
+            --cor2:#946f3b;
+            --cor3:#502410;
+            --cor4:#ffc400;
+            --corI:#240404;
+            --corII:#cc9785;
+            --corIII:#fb452f;
+            --corb:#ffffff;
+            --corgrad1:linear-gradient(to top, var(--cor1), var(--corb));
+            --corgrad2:linear-gradient(to bottom, #502410, #502410, #240404, #240404);
+            --corgrad3:linear-gradient(to bottom, #ffe5b1, #ffffff62);
+            --corgrad4:linear-gradient(to top, #fb452f, #fb452f, #cc9785);}
+
+            @font-face{
+                font-family:'DMSans';
+                src:url('DMSans.ttf')format('truetype'),
+                url('DMSans-Italic.ttf')format('truetype');}
+            
+            @font-face{
+            font-family:'Greenth Outline';
+            src:url(Greenth\ Outline.otf)format('opentype');}
+
+            body{
+                background-image:var(--corgrad1);
+            }
+
+            form{
+                display:block;
+                margin:auto;
+                padding:10px;
+                width:100%;
+                max-width:400px;
+                border-left:4px solid var(--corII);
+                border-right:4px solid var(--corII);
+                background:var(--corgrad2);
+            }
+            
+            /*label{font-family:'DMSans';
+            font-weight:bold;
+            color:#e7d491;}*/
+
+            .tellabel, .clientelabel{
+                display:block;
+                width:100%;
+                max-width:360px;
+                margin:auto;
+                margin-top:10px;
+                color:var(--cor1);
+                font-family:'DM Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-size:1.1em;
+            }
+            .tellabel:hover, .clientelabel:hover{
+                display:block;
+                width:100%;
+                max-width:360px;
+                margin:auto;
+                margin-top:10px;
+                color:var(--corb);
+                font-family:'DMSans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, 'sans-serif';
+                font-size:1.2em;
+                cursor:pointer;
+                transition-duration: .7s;}
+
+            .telinput, .clienteinput{
+                display:block;
+                margin:auto;
+                margin-bottom:-15px;
+                padding:4px;
+                height:33px;
+                width:100%;
+                max-width:360px;
+                border:3px solid var(--corII);
+                border-radius:10px;
+                background-color:#240404;
+                color:white;
+                font-weight:bold;
+            }
+
+            hr{
+                display:block;
+                margin:auto;
+                border:3px solid var(--cor1);
+                border-radius:30px;
+                width:100%;
+                max-width:360px;
+            }
+
+            h1, sub{
+                display:block;
+                font-family:'Greenth Outline';
+                text-align:center;
+                color:var(--corb);
+                text-shadow: 2px 2px 20px var(--cor1),
+                -2px -2px 20px var(--cor4);}
+            h1:hover{
+                display:block;
+                font-family:'Greenth Outline';
+                text-align:center;
+                border-radius: 20px;
+                color:var(--corb);
+                text-shadow: 2px 2px 20px var(--cor4),
+                -2px -2px 20px var(--corIII);
+                transition-duration: .7s;
+                cursor:pointer;}
+            h1{margin-bottom:-47px;}
+            sub{margin-bottom:20px;font-family:'DMSans'}
+            sub:hover{
+                display:block;
+                text-align:center;
+                border-radius: 20px;
+                color:var(--corb);
+                text-shadow: 2px 2px 20px var(--cor4),
+                -2px -2px 20px var(--cor4);
+                transition-duration: .7s;
+                cursor:pointer;}
+
+            fieldset{
+                display:block;
+                margin:auto;
+                margin-bottom:4px;
+                padding:4px;
+                width:100%;
+                max-width:360px;
+                border:3px solid var(--cor1);
+                border-radius:10px;
+                /*box-shadow: 1-Desl. Horizontal; 2-Desl. Vertical; 3-Espalhamento; 4-Cor da Sombra*/                  
+            }
+
+            .h3{
+                font-family:'Greenth Outline';
+                font-weight:bold;
+                color:var(--cor1);
+                margin:-20px -20px -10px 10px;
+                padding:5px;
+                text-shadow: 2px 2px 20px var(--corb),
+                -2px -2px 20px var(--cor4);
+            }
+            .h3:hover{
+                transition-duration: .7s;
+                color:var(--corb);
+                text-shadow: 2px 2px 20px var(--cor4),
+                -2px -2px 20px var(--cor4);
+                cursor:pointer;}
+
+            legend, summary{
+                    font-family:'DMSans';
+                    color:var(--cor1);
+            }
+
+            fieldset  details  fieldset  label{
+                    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                    font-weight:bold;
+                    color:white;
+            }
+
+            input[type='button']{
+                width:160px;
+                padding:4px;
+                font-family:'DMSans';
+                font-weight:550;
+                font-size:0.9em;
+                border:1px solid var(--corII);
+                border-radius:5px;
+                background:var(--corgrad4);
+            }
+            input[type='button']:hover{
+                color:var(--corb);
+                text-shadow:
+                1px 1px 6px var(--corb),
+                -1px -1px 6px rgb(0, 167, 0);
+                transition-duration: .7s;
+                cursor:pointer;
+            }
+            input[type='button']:active{
+                color:var(--corb);
+                text-shadow:
+                1px 1px 6px var(--corb),
+                -1px -1px 6px var(--cor4);
+                background:linear-gradient(to top, green, green, #ffe5b1);
+                transition-duration: .7s;
+                cursor:pointer;
+            }
+
+            #hr > label{font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                    font-weight:bold;
+                    color:white;}
+            #hr{margin-top:15px;}
+
+            ul{
+                columns:2;
+            }
+
+            #horario, #observacao{
+                border-radius:6px;
+                padding:2.5px;
+                background-color:#ffe5b1;
+                color:var(--corI);
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                font-size:.9em;
+                font-weight:bold;
+            }
+
+            textarea{resize:none;
+            width:100%;
+            max-width:360px;
+            height:65px;}
+
+            #submit{
+                display:block;
+                margin:auto;
+                width:100%;
+                max-width:380px;
+                height:50px;
+                margin-bottom:20px;
+                font-family:'DMSans';
+                font-weight:bold;
+                font-size:1.2em;
+                border-radius:5px;
+                background:var(--corgrad3);
+                box-shadow: 2px 2px 3.5px var(--cor1),
+                -2px -2px 3.5px var(--cor4);
+            }#submit:hover{
+                color:var(--corb);
+                text-shadow: 2px 2px 3.5px rgba(0, 255, 0, 0.26),
+                -2px -2px 3.5px rgba(0, 128, 0, 0.26);
+                box-shadow:2px 2px 3.5px rgb(0, 148, 0),
+                -2px -2px 3.5px rgb(0, 128, 0);
+                transition-duration: .7s;
+                cursor:pointer;
+            }#submit:active{
+                background:linear-gradient(to top, green, green, #ffe5b1);}
+    </style>
+</head>
+<body>
+        <form action="https://wa.me/5527997845178">
+            <div class="nometel" id="nometel">
+                <label for="cliente" class="clientelabel"><strong>Nome:</strong></label>
+                <input type="text" class="clienteinput" id="cliente" placeholder="Digite seu nome..." title="" required><br><br>
+                <label for="tel" class="tellabel"><strong>Telefone:</strong></label>
+                <input type="tel" class="telinput" name="tel" id="tel" placeholder="(DDD)xxxxx-xxxx" title="" required><br><br>
+            </div>
+            <hr>
+            <main>            
+                    <div id="cabecalho">
+                        <h1 id="titulo">Pizzas Guarani</h1><br>
+                        <sub id="subhorario"><strong>(18:00 - 21:00h)</strong></sub>
+                    </div>
+                        <fieldset name="Pizza Calabresa" id="PizzaCalabresa"> <!-- Pizza Calabresa -->
+                            <details>
+                                <summary class="h3" style="font-size:25px">Pizza Calabresa</summary>
+                                <fieldset id="CCalabsize" name="CCalabsize" required>
+                                    <legend><strong>Tamanho</strong></legend>
+                                    <input type="radio" name="CalabSize" id="Calab-M" value="41,90">
+                                    <label for="Calab-M">M -    R$41,90</label><br>
+                                    <input type="radio" name="CalabSize" id="Calab-G" value="47,90">
+                                    <label for="Calab-G">G -    R$47,90</label><br>
+                                    <input type="radio" name="CalabSize" id="Calab-XG" value="58,90">
+                                    <label for="Calab-XG">XG -  R$58,90</label>
+                                </fieldset>
+                                    <fieldset id="CalabAdicionais" name="CalabAdicionais">                                 <details>
+                                        <summary><strong>Adicionais</strong></summary>
+                                        <input type="checkbox" name="adicionais" id="Catupiry" value="15,00">
+                                        <label for="Catupiry">Catupiry - R$15,00</label><br>
+                                        <input type="checkbox" name="adicionais" id="Borda Recheada" value="18,50">
+                                        <label for="Catupiry">Borda Recheada - R$18,50</label>
+                                        </details>
+                                    </fieldset>
+                                    <fieldset id="CalabSem" name="CalabSem">
+                                        <details>
+                                                <summary><strong>Remover Ingrediente(s)</strong></summary>
+                                            <ul type="none" cols="2">
+                                                <li><input type="checkbox" name="subtrair" id="molhoCalab" value="molhoCalab">
+                                                <label for="molhoCalab">Molho</label></li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="mussarelaCalab" value="mussarelaCalab">
+                                                    <label for="mussarelaCalab">Mussarela</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="calabresaCalab" value="calabresaCalab">
+                                                    <label for="calabresaCalab">Calabresa</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="oréganoCalab" value="oréganoCalab">
+                                                    <label for="oréganoCalab">Orégano</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="cebolaCalab" value="cebolaCalab">
+                                                    <label for="cebolaCalab">Cebola</label>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </fieldset>
+                            </details>
+                            <input type="button" id="CalabCart" name="CalabCart" value="Adicionar ao carrinho">
+                        </fieldset><br>                                       <!-- Pizza Calabresa -->
+
+                        <fieldset name="Pizza Frango" id="PizzaFrango"> <!-- Pizza Frango -->
+                            <details>
+                                <summary class="h3" style="font-size:25px">Pizza Frango</summary>
+                                <fieldset id="FFrangosize" name="FFrangosize" required>
+                                    <legend><strong>Tamanho</strong></legend>
+                                    <input type="radio" name="FrangoSize" id="Frango-M" value="42,90">
+                                    <label for="Frango-M">M -    R$42,90</label><br>
+                                    <input type="radio" name="FrangoSize" id="Frango-G" value="53,90">
+                                    <label for="Frango-G">G -    R$53,90</label><br>
+                                    <input type="radio" name="FrangoSize" id="Frango-XG" value="63,90">
+                                    <label for="Frango-XG">XG -  R$63,90</label>
+                                </fieldset>
+                                    <fieldset id="FrangoAdicionais" name="FrangoAdicionais">                                 <details>
+                                        <summary><strong>Adicionais</strong></summary>
+                                        <input type="checkbox" name="adicionais" id="Catupiry" value="15,00">
+                                        <label for="Catupiry">Catupiry - R$15,00</label><br>
+                                        <input type="checkbox" name="adicionais" id="Borda Recheada" value="18,50">
+                                        <label for="Catupiry">Borda Recheada - R$18,50</label>
+                                        </details>
+                                    </fieldset>
+                                    <fieldset id="FrangoSem" name="FrangoSem">
+                                        <details>
+                                                <summary><strong>Remover Ingrediente(s)</strong></summary>
+                                            <ul type="none" cols="2">
+                                                <li><input type="checkbox" name="subtrair" id="molhoFrango" value="molhoFrango">
+                                                <label for="molhoFrango">Molho</label></li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="mussarelaFrango" value="mussarelaFrango">
+                                                    <label for="mussarelaFrango">Mussarela</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="Frango" value="Frango">
+                                                    <label for="Frango">Frango</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="oréganoFrango" value="oréganoFrango">
+                                                    <label for="oréganoFrango">Orégano</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="tomateFrango" value="tomateFrango">
+                                                    <label for="tomateFrango">Tomate</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="cebolaFrango" value="cebolaFrango">
+                                                    <label for="cebolaFrango">Cebola</label>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </fieldset>
+                            </details>
+                            <input type="button" id="FrangoCart" name="FrangoCart" value="Adicionar ao carrinho">
+                        </fieldset><br>                                 <!-- Pizza Frango -->
+
+                        <fieldset name="Pizza Mussarela" id="PizzaMussarela"> <!-- Pizza Mussarela -->
+                            <details>
+                                <summary class="h3" style="font-size:25px">Pizza Mussarela</summary>
+                                <fieldset id="MMussSize" name="MMussSize" required>
+                                    <legend><strong>Tamanho</strong></legend>
+                                    <input type="radio" name="MussSize" id="Muss-M" value="40,90">
+                                    <label for="Muss-M">M -    R$40,90</label><br>
+                                    <input type="radio" name="MussSize" id="Muss-G" value="47,90">
+                                    <label for="Muss-G">G -    R$47,90</label><br>
+                                    <input type="radio" name="MussSize" id="Muss-XG" value="54,90">
+                                    <label for="Muss-XG">XG -  R$54,90</label>
+                                </fieldset>
+                                    <fieldset id="MussAdicionais" name="MussAdicionais">
+                                        <details>
+                                        <summary><strong>Adicionais</strong></summary>
+                                        <input type="checkbox" name="adicionais" id="Catupiry" value="15,00">
+                                        <label for="Catupiry">Catupiry - R$15,00</label><br>
+                                        <input type="checkbox" name="adicionais" id="Borda Recheada" value="18,50">
+                                        <label for="Catupiry">Borda Recheada - R$18,50</label>
+                                        </details>
+                                    </fieldset>
+                                    <fieldset id="MussSem" name="MussSem">
+                                        <details>
+                                                <summary><strong>Remover Ingrediente(s)</strong></summary>
+                                            <ul type="none" cols="2">
+                                                <li><input type="checkbox" name="subtrair" id="molhoMuss" value="molhoMuss">
+                                                <label for="molhoMuss">Molho</label></li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="mussarelaMuss" value="mussarelaMuss">
+                                                    <label for="mussarelaMuss">Mussarela</label>
+                                                </li>
+                        
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="oréganoMuss" value="oréganoMuss">
+                                                    <label for="oréganoMuss">Orégano</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="tomateMuss" value="tomateMuss">
+                                                    <label for="tomateMuss">Tomate</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="cebolaMuss" value="cebolaMuss">
+                                                    <label for="cebolaMuss">Cebola</label>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </fieldset>
+                            </details>
+                            <input type="button" id="MussCart" name="MussCart" value="Adicionar ao carrinho">
+                        </fieldset><br>                                       <!-- Pizza Mussarela -->
+
+                        <fieldset name="Pizza Presunto" id="PizzaPresunto"> <!-- Pizza Presunto -->
+                            <details>
+                                <summary class="h3" style="font-size:25px">Pizza Presunto</summary>
+                                <fieldset id="PPresSize" name="PPresSize" required>
+                                    <legend><strong>Tamanho</strong></legend>
+                                    <input type="radio" name="PresSize" id="Pres-M" value="40,90">
+                                    <label for="Pres-M">M -    R$40,90</label><br>
+                                    <input type="radio" name="PresSize" id="Pres-G" value="46,90">
+                                    <label for="Pres-G">G -    R$46,90</label><br>
+                                    <input type="radio" name="PresSize" id="Pres-XG" value="57,90">
+                                    <label for="Pres-XG">XG -  R$57,90</label>
+                                </fieldset>
+                                    <fieldset id="PresAdicionais" name="PresAdicionais">                                 <details>
+                                        <summary><strong>Adicionais</strong></summary>
+                                        <input type="checkbox" name="adicionais" id="Catupiry" value="15,00">
+                                        <label for="Catupiry">Catupiry - R$15,00</label><br>
+                                        <input type="checkbox" name="adicionais" id="Borda Recheada" value="18,50">
+                                        <label for="Catupiry">Borda Recheada - R$18,50</label>
+                                        </details>
+                                    </fieldset>
+                                    <fieldset id="PresSem" name="PresSem">
+                                        <details>
+                                                <summary><strong>Remover Ingrediente(s)</strong></summary>
+                                            <ul type="none" cols="2">
+                                                <li><input type="checkbox" name="subtrair" id="molhoPres" value="molhoPres">
+                                                <label for="molhoPres">Molho</label></li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="mussarelaPres" value="mussarelaPres">
+                                                    <label for="mussarelaPres">Mussarela</label>
+                                                </li>
+                        
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="oréganoPres" value="oréganoPres">
+                                                    <label for="oréganoPres">Orégano</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="tomatePres" value="tomatePres">
+                                                    <label for="tomatePres">Tomate</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="cebolaPres" value="cebolaPres">
+                                                    <label for="cebolaPres">Cebola</label>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </fieldset>
+                            </details>
+                            <input type="button" id="PresCart" name="PresCart" value="Adicionar ao carrinho">
+                        </fieldset><br>                                     <!-- Pizza Presunto -->
+
+                        <fieldset name="Pizza Frango Catupiry" id="PizzaFrangoCat"> <!-- Pizza Frango Catupiry -->
+                            <details>
+                                <summary class="h3" style="font-size:25px">P. Frango Catupiry</summary>
+                                <fieldset id="FFrangoCatsize" name="FFrangoCatsize" required>
+                                    <legend><strong>Tamanho</strong></legend>
+                                    <input type="radio" name="FrangoCatSize" id="FrangoCat-M" value="50,90">
+                                    <label for="FrangoCat-M">M -    R$50,90</label><br>
+                                    <input type="radio" name="FrangoCatSize" id="FrangoCat-G" value="62,90">
+                                    <label for="FrangoCat-G">G -    R$62,90</label><br>
+                                    <input type="radio" name="FrangoCatSize" id="FrangoCat-XG" value="78,90">
+                                    <label for="FrangoCat-XG">XG -  R$78,90</label>
+                                </fieldset>
+                                    <fieldset id="FrangoCatAdicionais" name="FrangoCatAdicionais">                                 <details>
+                                        <summary><strong>Adicionais</strong></summary>
+                                        <input type="checkbox" name="adicionais" id="Catupiry" value="15,00">
+                                        <label for="Catupiry">Catupiry - R$15,00</label><br>
+                                        <input type="checkbox" name="adicionais" id="Borda Recheada" value="18,50">
+                                        <label for="Catupiry">Borda Recheada - R$18,50</label>
+                                        </details>
+                                    </fieldset>
+                                    <fieldset id="FrangoCatSem" name="FrangoCatSem">
+                                        <details>
+                                                <summary><strong>Remover Ingrediente(s)</strong></summary>
+                                            <ul type="none" cols="2">
+                                                <li><input type="checkbox" name="subtrair" id="molhoFrangoCat" value="molhoFrangoCat">
+                                                <label for="molhoFrangoCat">Molho</label></li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="mussarelaFrangoCat" value="mussarelaFrangoCat">
+                                                    <label for="mussarelaFrangoCat">Mussarela</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="FrangoCat" value="FrangoCat">
+                                                    <label for="FrangoCat">Frango</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="catupiryFrangoCat" value="catupiryFrangoCat">
+                                                    <label for="catupiryFrangoCat">Catupiry</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="oréganoFrangoCat" value="oréganoFrangoCat">
+                                                    <label for="oréganoFrangoCat">Orégano</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="tomateFrangoCat" value="tomateFrangoCat">
+                                                    <label for="tomateFrangoCat">Tomate</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="cebolaFrangoCat" value="cebolaFrangoCat">
+                                                    <label for="cebolaFrangoCat">Cebola</label>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </fieldset>
+                            </details>
+                            <input type="button" id="FrangoCatCart" name="FrangoCatCart" value="Adicionar ao carrinho">
+                        </fieldset><br>                                             <!-- Pizza Frango Catupiry -->
+
+                        <fieldset name="Pizza Portuguesa" id="PizzaPortuguesa"> <!-- Pizza Portuguesa -->
+                            <details>
+                                <summary class="h3" style="font-size:25px">Pizza Portuguesa</summary>
+                                <fieldset id="PPortsize" name="PPortsize" required>
+                                    <legend><strong>Tamanho</strong></legend>
+                                    <input type="radio" name="PortSize" id="Port-M" value="47,90">
+                                    <label for="Port-M">M -    R$47,90</label><br>
+                                    <input type="radio" name="PortSize" id="Port-G" value="56,90">
+                                    <label for="Port-G">G -    R$56,90</label><br>
+                                    <input type="radio" name="PortSize" id="Port-XG" value="63,90">
+                                    <label for="Port-XG">XG -  R$63,90</label>
+                                </fieldset>
+                                    <fieldset id="PortAdicionais" name="PortAdicionais">
+                                        <details>
+                                        <summary><strong>Adicionais</strong></summary>
+                                        <input type="checkbox" name="adicionais" id="Catupiry" value="15,00">
+                                        <label for="Catupiry">Catupiry - R$15,00</label><br>
+                                        <input type="checkbox" name="adicionais" id="Borda Recheada" value="18,50">
+                                        <label for="Catupiry">Borda Recheada - R$18,50</label>
+                                        </details>
+                                    </fieldset>
+                                    <fieldset id="PortSem" name="PortSem">
+                                        <details>
+                                                <summary><strong>Remover Ingrediente(s)</strong></summary>
+                                            <ul type="none" cols="2">
+                                                <li><input type="checkbox" name="subtrair" id="molhoPort" value="molhoPort">
+                                                <label for="molhoPort">Molho</label></li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="mussarelaPort" value="mussarelaPort">
+                                                    <label for="mussarelaPort">Mussarela</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="presuntoPort" value="presuntoPort">
+                                                    <label for="presuntoPort">Presunto</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="frangoPort" value="frangoPort">
+                                                    <label for="frangoPort">Frango</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="palmitoPort" value="palmitoPort">
+                                                    <label for="palmitoPort">Palmito</label><br>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="milhoPort" value="milhoPort">
+                                                    <label for="milhoPort">Milho</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="ovoPort" value="ovoPort">
+                                                    <label for="ovoPort">Ovo</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="azeitonaPort" value="azeitonaPort">
+                                                    <label for="azeitonaPort">Azeitona</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="oréganoPort" value="oréganoPort">
+                                                    <label for="oréganoPort">Orégano</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="tomatePort" value="tomatePort">
+                                                    <label for="tomatePort">Tomate</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="subtrair" id="cebolaPort" value="cebolaPort">
+                                                    <label for="cebolaPort">Cebola</label>
+                                                </li>
+                                            </ul>
+                                        </details>
+                                    </fieldset>
+                            </details>
+                            <input type="button" id="PortCart" name="PortCart" value="Adicionar ao carrinho">
+                        </fieldset><br>                                         <!-- Pizza Portuguesa -->
+
+                        <hr>
+
+                        <fieldset id="hr" name="hr"> <!-- Horário Retirada-->
+                            <legend><strong>Horário da Retirada</strong></legend>
+                            <input type="time" name="horario" id="horario" min="19:00" max="21:00" required>
+                            <label for="horario">Apenas entre 19:00 e 21:00.</label>
+                        </fieldset>                            <!-- Horário Retirada-->
+
+                        <fieldset id="obs" name="obs"> <!-- Observação -->
+                            <legend><strong>Obs.:</strong></legend>
+                            <textarea id="observacao" placeholder="Digite uma observação..."></textarea>
+                        </fieldset>                                  <!-- Observação -->
+
+            <br>
+            <br>
+            <input type="submit" name="submit" id="submit" value="Enviar para WhatsApp.">
+            </main>
+        </form>
+        <script>
+        </script>
+</body>
+</html>

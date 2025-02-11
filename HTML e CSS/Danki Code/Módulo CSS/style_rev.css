@@ -1,0 +1,33 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+
+}
+.swords{
+   font-family: 'Amatic SC', cursive;
+   color:hwb(197 0% 0%);
+}
+
+.PR{
+   font-family:Haettenschweiler;
+   color:rgb(99, 10, 182);
+   font-weight:lighter;
+}
+
+#crossover{
+   font-family:'Courier New', Courier;
+   color:rgba(167, 53, 0, 0.705);
+}
+
+[NovoAtributo=Magoichi]{
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color:rgb(109, 161, 78);
+   font-weight: bolder;
+}
+
+[NewATR=Nobunaga]{
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-weight:lighter;
+   color:rgb(77, 21, 105);
+}

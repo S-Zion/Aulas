@@ -1,0 +1,36 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   width: 100%;
+   height: 40px;
+   background-image: url('Evil\ Danny\ Evolution.jpg');
+   background-repeat:no-repeat;
+   background-position:top;
+   background-size:auto;
+   background-color:white;
+}
+
+h2{
+   font-size: 85px;
+   font-style:italic;
+   font-weight:lighter;
+   font-family: 'Amatic SC', cursive;
+}
+
+.swords{
+   font-weight:bold;
+   color:rgb(16, 146, 163);
+}
+
+.PR{
+   color:purple;
+}
+
+#crossover{
+   color:saddlebrown;
+   font-weight:bold;
+}

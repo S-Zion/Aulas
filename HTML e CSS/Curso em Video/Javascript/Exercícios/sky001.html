@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Eventos JS</title>
+    <style>
+        *{margin:0;
+        padding:0;
+        box-sizing:border-box;}
+
+        :root{
+            --cor1:#ff0000;
+            --cor2:green;
+            --cor3:blue;
+            --res:color:none;}
+
+        #red{color:var(--cor1);
+        font:normal bold 25px 'Lucida Sans';}
+        #green{color:var(--cor2);
+        font:normal bold 25px 'Lucida Sans';}
+        #blue{color:var(--cor3);
+        font:normal bold 25px 'Lucida Sans';}
+        #reset{color:gray;
+            font:normal bold 25px 'Lucida Sans';}
+
+        #red, #green, #blue, #reset{
+            display:inline-block;
+            margin:auto;
+            text-align:center;
+            width:150px;
+            border:2px solid black;
+            border-radius:4px;}
+        #reset{margin-top:10px;width:460px;}
+            #red:hover, #green:hover, #blue:hover, #reset:hover{
+            background-color:rgba(0, 0, 0, 0.26);
+            cursor:pointer;
+            }
+    </style>
+</head>
+<body>
+    <h1>Mude a cor de fundo.</h1>
+    <div id="red">Vermelho</div>
+    <div id="green">Verde</div>
+    <div id="blue">Azul</div><br>
+    <div id="reset">Resetar.</div>
+</body>
+
+<script>
+    const fundobody = window.document.querySelector('body')
+    document.querySelector('#red').addEventListener('click', redclick)
+    document.querySelector('#green').addEventListener('click', greenclick)
+    document.querySelector('#blue').addEventListener('click', blueclick)
+    document.querySelector('#reset').addEventListener('click', resclick)
+    function redclick(){
+        fundobody.style.background='red'}
+    function greenclick(){
+        fundobody.style.background='green'}
+    function blueclick(){
+        fundobody.style.background='blue'}
+        function resclick(){
+            fundobody.style.background=''
+        }
+</script>
+</html>

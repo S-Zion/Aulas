@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 16</title>
+    <style>
+        body{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        a{
+            margin:10px;
+            padding:10px;
+            border-width:10px;
+            border-style:ridge;
+            border-color:darkslategray;
+        }
+
+        p{
+            width:425px;
+        }
+
+        .paragrafo{
+            border:1em;
+        }
+
+        .paragrafo::before{
+            content:'Parágrafo <p>';
+            color:rgba(0, 0, 255, 0.308);
+        }
+
+        .paragrafo::after{
+            content:'Parágrafo <p>';
+            color:rgba(0, 0, 255, 0.308);
+        }
+    </style>
+</head>
+<body>
+    <h1>Título Exemplo</h1>
+    <p class="inline"><a href="link">Lorem</a> ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="paragrafo"><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis reprehenderit ex id fugiat placeat voluptatum architecto debitis nisi ipsa. Praesentium quam eveniet hic voluptate ipsa alias similique repellat consequuntur provident?</p>
+</body>
+</html>

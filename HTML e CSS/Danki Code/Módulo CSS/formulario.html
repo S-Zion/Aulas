@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Contato</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+            body{
+                background-image:url('Stark\ Logo.png');
+                background-color:#27282D ;
+                background-repeat:no-repeat;
+                background-position-x: center;
+                background-position-y: 8%;
+                background-size: 320px;
+            }
+
+            body{
+                margin:10px;
+                margin-top:250px;
+            }
+
+            input,.msg{
+                width:100%;
+                max-width:450px;
+                height:25px;
+                margin:10px auto;
+                padding: 5px;
+                display:block;
+                border-radius: 15px;
+            }
+
+            .msg{
+                height:125px;
+                resize:none;
+            }
+
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" name="Nome" placeholder="Seu nome.." />
+        <input type="text" name="E-Mail.." placeholder="Seu E-Mail.."/>
+        <textarea class="msg" placeholder="Sua mensagem..."></textarea>
+        <input type="submit" value="Enviar!"/>
+    </div>
+</body>
+</html>
